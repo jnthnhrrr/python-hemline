@@ -67,10 +67,9 @@ you want to create a theme based on a single border character, you can use the
 If you want the frame in a certain color, you can pass an instance of
 `hemline.colors.Color` to the frame's constructor.
 
-If you need more flexibility, you can subclass `hemline.Frame`, implement
-a custom colorization function and inject it as class variable `colorize`. This
-function must accept a string and a color parameter, and return the colorized
-string.
+If you need more flexibility, you can also pass a colorization function into the
+constructor of `hemline.Frame`.  This function must accept a string and a
+color parameter, and return the colorized string.
 
 ### Wrapping Text Inside The Frame
 
@@ -80,6 +79,6 @@ breaks.
 
 If you want to apply a different way of wrapping the text, you can define a
 custom wrapping function and inject it into the constructor of `Frame` by
-passing it `wrap` parameter. The wrapping function must have the
+passing it through the `wrap` parameter. The wrapping function must have the
 function signature `Callable[[str, int], str]`, with the first parameter being
 the input string, and the second parameter being the target width.

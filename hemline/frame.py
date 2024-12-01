@@ -1,6 +1,5 @@
 from dataclasses import dataclass, field
-from textwrap import fill
-from typing import Any, Callable, ClassVar
+from typing import Any, Callable
 
 from .alignment import Alignment, get_alignment_method
 from .defaults import (
@@ -19,8 +18,6 @@ from .utils import get_terminal_width
 
 @dataclass
 class Frame:
-    colorize: ClassVar[Callable[[str, Any], str]] = DEFAULT_COLORIZE
-
     color: Any | None = None
     text_alignment: Alignment = DEFAULT_TEXT_ALIGNMENT
     alignment: Alignment = DEFAULT_FRAME_ALIGNMENT
@@ -30,6 +27,7 @@ class Frame:
     outer_width: int = DEFAULT_OUTER_WIDTH
     container_width: int | None = None
 
+    colorize: Callable[[str, Any], str] = DEFAULT_COLORIZE
     wrap: Callable[[str, int], str] = DEFAULT_TEXT_WRAP
 
     @property
@@ -56,7 +54,7 @@ class Frame:
     def vertical_border(self) -> str:
         character = self.theme.vertical
         if self.color:
-            character = self.__class__.colorize(character, self.color)
+            character = self.colorize(character, self.color)
         return character
 
     def format(self, text: str) -> str:
