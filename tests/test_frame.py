@@ -2,7 +2,7 @@ from uneedtest import TestCase
 from unittest.mock import patch
 
 from hemline import Frame
-from hemline.colors import Colors
+from hemline.colors import Color
 from hemline.themes import double, factory
 
 
@@ -149,7 +149,7 @@ class TestFormatting(TestCase):
 
     def test_applies_color(self, _):
         container_width = 40
-        frame = Frame(container_width=container_width, color=Colors.DARK_GREEN)
+        frame = Frame(container_width=container_width, color=Color.DARK_GREEN)
         text = "Hello, World"
         result = frame.format(text)
         expected_lines = [

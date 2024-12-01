@@ -1,7 +1,7 @@
 from enum import StrEnum
 
 
-class Colors(StrEnum):
+class Color(StrEnum):
     BLACK = "\033[0;30m"
     DARK_RED = "\033[0;31m"
     DARK_GREEN = "\033[0;32m"
@@ -21,5 +21,5 @@ class Colors(StrEnum):
     RESET = "\033[0m"
 
 
-def colorize(text: str, color: Colors) -> str:
-    return f"{color}{text}{Colors.RESET}"
+def colorize(text: str, color: Color) -> str:
+    return f"{color}{text}{Color.RESET}"
