@@ -71,3 +71,15 @@ If you need more flexibility, you can subclass `hemline.Frame`, implement
 a custom colorization function and inject it as class variable `colorize`. This
 function must accept a string and a color parameter, and return the colorized
 string.
+
+### Wrapping Text Inside The Frame
+
+Text inside the frame is wrapped by keeping paragraphs intact (a paragraph being
+defined as an occurrence of two line breaks in a row), but condensing line
+breaks.
+
+If you want to apply a different way of wrapping the text, you can define a
+custom wrapping function and inject it into the constructor of `Frame` by
+passing it `wrap` parameter. The wrapping function must have the
+function signature `Callable[[str, int], str]`, with the first parameter being
+the input string, and the second parameter being the target width.

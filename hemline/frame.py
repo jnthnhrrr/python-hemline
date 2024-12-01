@@ -9,6 +9,7 @@ from .defaults import (
     DEFAULT_HORIZONTAL_PADDING,
     DEFAULT_OUTER_WIDTH,
     DEFAULT_TEXT_ALIGNMENT,
+    DEFAULT_TEXT_WRAP,
     DEFAULT_THEME,
     DEFAULT_VERTICAL_PADDING,
 )
@@ -28,6 +29,8 @@ class Frame:
     vertical_padding: int = DEFAULT_VERTICAL_PADDING
     outer_width: int = DEFAULT_OUTER_WIDTH
     container_width: int | None = None
+
+    wrap: Callable[[str, int], str] = DEFAULT_TEXT_WRAP
 
     @property
     def effective_container_width(self) -> int:
@@ -57,12 +60,7 @@ class Frame:
         return character
 
     def format(self, text: str) -> str:
-        paragraph_delimiter = "\n\n"
-        paragraphs = text.split(paragraph_delimiter)
-        text = paragraph_delimiter.join(
-            fill(paragraph.strip(), self.text_width)
-            for paragraph in paragraphs
-        )
+        text = self.wrap(text, self.text_width)
         raw_lines = text.split("\n")
         raw_lines = (
             [""] * self.vertical_padding + raw_lines + [""] * self.vertical_padding

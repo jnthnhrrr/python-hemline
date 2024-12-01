@@ -1,9 +1,13 @@
+from collections.abc import Callable
+
 from .alignment import Alignment
 from .colors import colorize
+from .wrap import wrap
 from .themes import single
 
 DEFAULT_THEME = single
 DEFAULT_TEXT_ALIGNMENT: Alignment = "left"
+DEFAULT_TEXT_WRAP: Callable[[str, int], str] = wrap
 DEFAULT_FRAME_ALIGNMENT: Alignment = "center"
 DEFAULT_HORIZONTAL_PADDING = 4
 DEFAULT_VERTICAL_PADDING = 1
