@@ -27,13 +27,13 @@ framed = frame.format(text)
 You can pass the following parameters to the constructor
 of`hemline.Frame`:
 
-    + `outer_width` (the width of the frame including `horizontal_padding`),
-    + `container_width` (defaults to the width of the terminal),
-    + `text_alignment` (either `"center"` or `"left"`),
-    + `frame_alignment` inside the container (either `"center"` or `"left"`),
-    + `horizontal_padding`,
-    + `vertical_padding`
-    + `color`
++ `outer_width` (the width of the frame including `horizontal_padding`),
++ `container_width` (defaults to the width of the terminal),
++ `text_alignment` (either `"center"` or `"left"`),
++ `frame_alignment` inside the container (either `"center"` or `"left"`),
++ `horizontal_padding`,
++ `vertical_padding`
++ `color`
 
 
 ## Styling the Frame
@@ -43,10 +43,10 @@ of`hemline.Frame`:
 The characters defining the edges and corners of the frame make a theme. There
 are four predefined themes, with self-explanatory names:
 
-    + `hemline.themes.single`  (The default theme)
-    + `hemline.themes.double`
-    + `hemline.themes.dotted`
-    + `hemline.themes.none`
++ `hemline.themes.single`  (The default theme)
++ `hemline.themes.double`
++ `hemline.themes.dotted`
++ `hemline.themes.none`
 
 ```python3
 from hemline.themes import double
