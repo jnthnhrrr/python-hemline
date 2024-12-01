@@ -183,7 +183,7 @@ class TestFormatting(TestCase):
         container_width = 30
         text_lines = [
             "Hello, darkness, my old friend",
-            "\n",
+            "",
             "I've come to talk with you again",
         ]
         text = "\n".join(text_lines)
