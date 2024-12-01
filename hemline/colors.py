@@ -21,5 +21,11 @@ class Color(StrEnum):
     RESET = "\033[0m"
 
 
-def colorize(text: str, color: Color) -> str:
+def default_colorize(text: str, color: Color) -> str:
+    """
+    Parameters:
+        text: The text to colorize
+
+        color: The Color to use.
+    """
     return f"{color}{text}{Color.RESET}"

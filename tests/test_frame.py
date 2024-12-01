@@ -112,7 +112,9 @@ class TestFormatting(TestCase):
     def test_applies_outer_width_and_text_alignment(self, _):
         container_width = 40
         frame = Frame(
-            container_width=container_width, outer_width=38, text_alignment="center"
+            container_width=container_width,
+            outer_width=38,
+            text_alignment="center",
         )
         text = "Hello, World"
         result = frame.format(text)
