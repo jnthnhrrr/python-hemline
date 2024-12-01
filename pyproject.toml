@@ -1,3 +1,23 @@
+[project]
+authors = [
+  {name = "Jonathan Herrera", email = "jonathan.herrera@posteo.de"},
+]
+description = "A python library for printing framed text to the terminal."
+readme = {file = "README.md", content-type = "text/markdown"}
+license = {file = "LICENSE.md", content-type = "text/markdown"}
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Printing",
+  "Programming Language :: Python :: 3.12",
+]
+
+[project.urls]
+Homepage = 'https://github.com/jnthnhrrr/python-hemline'
+Code = 'https://github.com/jnthnhrrr/python-hemline'
+Issues = 'https://github.com/jnthnhrrr/python-hemline/issues'
+
 [tool.poetry]
 name = "hemline"
 version = "1.0.0"
